@@ -30,3 +30,8 @@ docker tag billingapp ketbome/image-billingapp:v1
 # Push al repositorio (Loguearse anteriormente)
 docker push ketbome/image-billingapp
 ```
+
+## Docker Compose: Orquestacion simple y buenas practicas
+
+> [!NOTE]
+> La version de Docker Compose no puede ser superior a la del Docker engine **[Docker versioning](https://docs.docker.com/compose/compose-file/compose-versioning/)**
