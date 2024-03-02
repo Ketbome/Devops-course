@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  # database engine service
+  postgres_db:
+    container_name: postgres
+    image: postgres:latest
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./dbfiles:/docker-entrypoint-initdb.d
+      - ./postgres-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: qwerty
+      POSTGRES_DB: postgres
+  # database admin service
+  adminer:
+    container_name: adminer
+    image: adminer
+    restart: always
+    ports:
+      - "9090:8080"
+    depends_on:
+      - postgres_db
