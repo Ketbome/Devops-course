@@ -31,7 +31,29 @@ docker tag billingapp ketbome/image-billingapp:v1
 docker push ketbome/image-billingapp
 ```
 
+### Ver los datos de un contenedor
+
+```bash
+docker inspect localbillingApp
+```
+
 ## Docker Compose: Orquestacion simple y buenas practicas
 
 > [!NOTE]
 > La version de Docker Compose no puede ser superior a la del Docker engine **[Docker versioning](https://docs.docker.com/compose/compose-file/compose-versioning/)**
+
+### Para inicializar la billingapp con Compose
+
+```bash
+docker compose -f {nombre_archivo} up -d
+```
+
+### Pausar y eliminar contenedor creado
+
+```bash
+# Pausar
+docker compose -f .\stack-billing.yml stop
+
+# Remover
+docker compose -f .\stack-billing.yml rm
+```

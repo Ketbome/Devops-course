@@ -13,7 +13,7 @@ COPY mime.types /etc/nginx/mime.types
 #The ports 7080 for backend-app and 80 for web app
 EXPOSE 80
 
-ENTRYPOINT ["sh", "/appshell.sh"]
+CMD ["nginx", "-g", "daemon off;"]
 
 
 

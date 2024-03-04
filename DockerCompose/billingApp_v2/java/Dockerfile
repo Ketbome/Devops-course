@@ -13,11 +13,8 @@ VOLUME /tmp
 # Copiar el archivo jar
 ARG JAR_FILE
 
-# Variable de entorno de DB_PASSWORD
-ARG DB_PASSWORD
-
 # Agregar la variable de entorno
-ENV DB_PASSWORD=$DB_PASSWORD
+ENV DB_PASSWORD=qwerty
 
 # Copiar el archivo jar al contenedor
 COPY ${JAR_FILE} /tmp/app.jar
