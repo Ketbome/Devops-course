@@ -20,7 +20,32 @@ services:
     container_name: adminer
     image: adminer
     restart: always
-    ports:
-      - "9090:8080"
     depends_on:
       - postgres_db
+    ports:
+      - "9090:8080"
+
+  # Billing app backend service
+  billingapp-back:
+    build:
+      context: ./java
+      args:
+        - JAR_FILE=*.jar
+        - DB_PASSWORD= qwerty
+    container_name: billingApp-back
+    enviroment:
+      - JAVA_OPTS=
+        -Xms256m
+        -Xmx256m
+    depends_on:
+      - postgres_db
+    ports:
+      - 8080:8080
+  billingapp-front:
+    build:
+      context: ./angular
+    container_name: billingApp-front
+    depends_on:
+      - billingapp-back
+    ports:
+      - 80:80
