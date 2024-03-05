@@ -37,6 +37,12 @@ docker push ketbome/image-billingapp
 docker inspect localbillingApp
 ```
 
+### Acceder al terminal de un contenedor
+
+```bash
+docker exec -it {nombre_contenedor} sh
+```
+
 ## Docker Compose: Orquestacion simple y buenas practicas
 
 > [!NOTE]
@@ -56,4 +62,13 @@ docker compose -f .\stack-billing.yml stop
 
 # Remover
 docker compose -f .\stack-billing.yml rm
+```
+
+## Docker Swarm: Orquestador Avanzado para escalar contenedores y limitar recursos
+
+
+Para ver las estadisticas de los recursos de forma basica se puede hacer:
+
+```bash
+docker stats
 ```
