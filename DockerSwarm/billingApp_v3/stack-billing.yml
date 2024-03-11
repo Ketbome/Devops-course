@@ -3,7 +3,7 @@ version: "3.1"
 services:
   #database engine service
   postgres_db_prod:
-    container_name: postgres
+    container_name: postgres_prod
     image: postgres:latest
     restart: always
     networks:
@@ -20,7 +20,7 @@ services:
       POSTGRES_DB: postgres
   #database engine service
   postgres_db_prep:
-    container_name: postgres
+    container_name: postgres_prep
     image: postgres:latest
     restart: always
     networks:
@@ -54,7 +54,7 @@ services:
       context: ./java
       args:
         - JAR_FILE=billing-0.0.3-SNAPSHOT.jar
-    container_name: billingApp-back
+    container_name: billingApp-back-prod
     environment:
       - JAVA_OPTS=
         -Xms256M
@@ -71,7 +71,7 @@ services:
       context: ./java
       args:
         - JAR_FILE=billing-0.0.2-SNAPSHOT.jar
-    container_name: billingApp-back
+    container_name: billingApp-back-prep
     environment:
       - JAVA_OPTS=
         -Xms256M
@@ -84,6 +84,7 @@ services:
       - 7080:7080
   #Billin app frontend service
   billingapp-front-prod:
+    container_name: billingApp-front-prod
     build:
       context: ./angular
     deploy:
@@ -105,6 +106,7 @@ services:
       - 80:80
   #Billin app frontend service
   billingapp-front-prep:
+    container_name: billingApp-front-prep
     build:
       context: ./angular
     deploy:
