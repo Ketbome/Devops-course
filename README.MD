@@ -2,6 +2,8 @@
 
 ## Docker: trabajar con contenedores e imagenes
 
+Con `docker info` se puede ver toda la informacion de docker
+
 ### Cargar una imagen directamente ya hecha
 
 Se trabaja con una imagen ya creada para el entendimiento de esta seccion
@@ -66,9 +68,14 @@ docker compose -f .\stack-billing.yml rm
 
 ## Docker Swarm: Orquestador Avanzado para escalar contenedores y limitar recursos
 
-
 Para ver las estadisticas de los recursos de forma basica se puede hacer:
 
 ```bash
 docker stats
+```
+
+Inicializar dicker swarm
+
+```bash
+docker swarm init
 ```
