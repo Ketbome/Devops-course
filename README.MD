@@ -79,3 +79,24 @@ Inicializar dicker swarm
 ```bash
 docker swarm init
 ```
+
+### Desplegar y probar stack
+
+Desplegar
+
+```bash
+docker stack deploy -c .\stack-billing.yml billing
+
+docker stack ps billing
+```
+
+Para poder acceder a la aplicacion hay que acceder por la IP de swarm del nodo que se puede ver en `docker info`
+
+### Desactivar cluster 
+
+```bash
+docker stack rm billing
+```
+
+## Kubernetes 
+
