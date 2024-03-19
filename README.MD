@@ -121,3 +121,15 @@ minikube start -p aged --kubernetes-version=v1.16.1
 
 minikube delete --all
 ```
+
+Tambien se tiene un dashboard:
+
+```bash
+minikube dashboard --url
+```
+
+### Kubetcl Cracion de un pod
+
+```bash
+kubectl run kbillingapp --image=sotobotero/udemy-devops:0.0.1 --port=80 80
+```
