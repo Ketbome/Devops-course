@@ -92,11 +92,32 @@ docker stack ps billing
 
 Para poder acceder a la aplicacion hay que acceder por la IP de swarm del nodo que se puede ver en `docker info`
 
-### Desactivar cluster 
+### Desactivar cluster
 
 ```bash
 docker stack rm billing
 ```
 
-## Kubernetes 
+## Kubernetes
 
+### Uso de minikube para simular
+
+Los comandos basicos:
+
+```bash
+minikube start
+
+minikube pause
+
+minikube unpause
+
+minikube stop
+
+minikube config set memory 16384
+
+minikube addons list
+
+minikube start -p aged --kubernetes-version=v1.16.1
+
+minikube delete --all
+```
