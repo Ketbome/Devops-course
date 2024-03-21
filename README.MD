@@ -128,8 +128,32 @@ Tambien se tiene un dashboard:
 minikube dashboard --url
 ```
 
-### Kubetcl Cracion de un pod
+### Kubetcl
 
 ```bash
 kubectl run kbillingapp --image=sotobotero/udemy-devops:0.0.1 --port=80 80
+```
+
+Ver los pod
+
+```bash
+kubectl get pod
+```
+
+Ver la descripcion del pod
+
+```bash
+kubectl describe pod kbillingapp
+```
+
+Exponer el puerto para que lo vea el cliente
+
+```bash
+kubectl expose pod kbillingapp --type=LoadBalancer --port=8080 --target-port=80
+```
+
+Eliminar el pod
+
+```bash
+kubectl delete -n default pod kbillingapp
 ```
