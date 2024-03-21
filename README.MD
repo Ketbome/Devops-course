@@ -130,6 +130,8 @@ minikube dashboard --url
 
 ### Kubetcl
 
+#### Iniciar una imagen ya creada en un pod
+
 ```bash
 kubectl run kbillingapp --image=sotobotero/udemy-devops:0.0.1 --port=80 80
 ```
@@ -156,4 +158,26 @@ Eliminar el pod
 
 ```bash
 kubectl delete -n default pod kbillingapp
+```
+
+#### Crear los objetos de un cluster
+
+Para hacerlo poner todos los archivos uno por uno despues de la -f, Ejemplo:
+
+```bash
+kubectl apply -f .\secret-dev.yaml
+```
+
+Idealmente en este orden
+
+- Variables de entorno
+- ConfigMap
+- Almacenamiento/Volumes
+- Deployments
+- Services
+
+Para eliminar:
+
+```bash
+kubectl delete -f .\
 ```
