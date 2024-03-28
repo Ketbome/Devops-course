@@ -100,6 +100,13 @@ docker stack rm billing
 
 ## Kubernetes
 
+- Pods: Unidades básicas de despliegue y gestión, que agrupan uno o más contenedores con almacenamiento y red compartidos.
+- Deployments: Describen el estado deseado de una implementación, gestionando las réplicas de la aplicación.
+- Services: Definen cómo exponer una aplicación ejecutada en un conjunto de pods, actuando como balanceador de carga.
+- ConfigMaps: Permiten desacoplar la configuración de las imágenes, almacenando variables de entorno, argumentos de línea de comandos y configuración de volúmenes.
+- Labels: Pares clave-valor utilizados para organizar, seleccionar, consultar y monitorear objetos de manera eficiente.
+- Selectores: Mecanismos para realizar consultas basadas en etiquetas y filtrar objetos según criterios específicos.
+
 ### Uso de minikube para simular
 
 Los comandos basicos:
@@ -189,7 +196,7 @@ kubectl delete -f .\
 Crear la imagen con jenkins y maven
 
 ```bash
-docker build -t jekins-cicd --no-cache .
+docker build -t jenkins-cicd --no-cache .
 ```
 
 Correr la imagen con sus respectivos puertos
