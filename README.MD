@@ -186,8 +186,14 @@ kubectl delete -f .\
 
 ### Jenkins
 
-Se usa la imagen de docker
+Crear la imagen con jenkins y maven
 
 ```bash
-docker buils -t jekins-cicd --no-cache .
+docker build -t jekins-cicd --no-cache .
+```
+
+Correr la imagen con sus respectivos puertos
+
+```bash
+docker run -d -p 8080:8080 -p 50000:50000 --name jenkins jenkins-cicd
 ```
