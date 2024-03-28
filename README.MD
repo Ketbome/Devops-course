@@ -189,7 +189,7 @@ Para eliminar:
 kubectl delete -f .\
 ```
 
-## Entrega continua(CI) y Despliegue continuo
+## Integracion continua(CI) y Despliegue continuo(CD)
 
 ### Jenkins
 
