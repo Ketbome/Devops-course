@@ -181,3 +181,13 @@ Para eliminar:
 ```bash
 kubectl delete -f .\
 ```
+
+## Entrega continua(CI) y Despliegue continuo
+
+### Jenkins
+
+Se usa la imagen de docker
+
+```bash
+docker buils -t jekins-cicd --no-cache .
+```
